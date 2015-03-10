@@ -19,9 +19,8 @@ RSpec.describe Album, :type => :model do
   it 'has many photos' do
     album = @user.albums.create(title:'party')
     photo = @user.photos.create(title:"party pic 1", album: album)
-    debugger
     expect(album.photos.first).to eq(photo)
-    expect(photos.album).to eq(album)
+    expect(photo.album).to eq(album)
   end
 
 end
