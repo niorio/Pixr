@@ -17,9 +17,9 @@ module Api
     end
 
     def show
-      @album = current_user.albums.find(params[:id]).includes(:photos)
-
-      if @album
+      @album = Album.includes(:photos).find(params[:id])
+      
+      if @album.owner == current_user
         render json: @album
       else
         render json: ["You do not have permission to view this album"],
