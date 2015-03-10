@@ -1,0 +1,23 @@
+<h1>New User</h1>
+
+<% if @user.errors %>
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<form action="<%= users_url %>" method="post">
+  <%= csrf_token %>
+
+  <label>Email:
+    <input type="text" name="user[email]" value="<%= @user.email %>">
+  </label>
+  <label>Password:
+    <input type="password" name="user[password]">
+  </label>
+
+  <button>Submit</button>
+</form>

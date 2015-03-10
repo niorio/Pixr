@@ -1,0 +1,16 @@
+<h1>Log In</h1>
+<%= flash.now[:errors] %>
+
+<form action="<%= session_url %>" method="post">
+  <%= csrf_token %>
+
+  <label>Email:
+    <input type="text" name="user[email]" value="<%= @user.email %>">
+  </label>
+  <label>Password:
+    <input type="password" name="user[password]">
+  </label>
+
+  <button>Sign In</button>
+
+</form>
