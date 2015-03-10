@@ -21,7 +21,8 @@ module Api
       if @photo.allowed?(current_user)
         render json: @photo
       else
-        render json: ["You do not have permission to view this photo"], status: 403
+        render json: ["You do not have permission to view this photo"],
+                      status: 403
       end
 
     end

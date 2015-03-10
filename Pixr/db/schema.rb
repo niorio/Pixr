@@ -11,24 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310162245) do
+ActiveRecord::Schema.define(version: 20150310192641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "photos", force: true do |t|
+  create_table "albums", force: true do |t|
     t.integer  "owner_id",   null: false
     t.string   "title",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "albums", ["owner_id"], name: "index_albums_on_owner_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.integer  "owner_id",   null: false
+    t.string   "title",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "album_id"
+  end
+
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
   add_index "photos", ["owner_id"], name: "index_photos_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string "email",           null: false
-    t.string "password_digest", null: false
-    t.string "session_token",   null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

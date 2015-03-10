@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   namespace :api do
     resources :photos, only: [:create, :destroy, :edit, :show, :index]
+    resources :albums, only: [:create, :destroy, :edit, :show, :index]
   end
 end

@@ -55,5 +55,5 @@ tag_id      | integer   | not null, foreign key (references tags)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-sharer      | integer   | not null, foreign key (references users)
-receiver    | integer   | not null, foreign key (references users)
+share_from  | integer   | not null, foreign key (references users)
+share_to    | integer   | not null, foreign key (references users)
