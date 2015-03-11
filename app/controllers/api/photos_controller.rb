@@ -16,10 +16,10 @@ module Api
     end
 
     def show
-      @photo = Photo.find(params[:id])
+      @photo = Photo.includes(:comments).find(params[:id])
 
       if @photo.allowed?(current_user)
-        render json: @photo
+        render 'show'
       else
         render json: ["You do not have permission to view this photo"],
                       status: 403

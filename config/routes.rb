@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :photos, only: [:create, :destroy, :edit, :show, :index]
     resources :albums, only: [:create, :destroy, :edit, :show, :index]
+    resources :comments, only: [:create, :destroy, :edit]
   end
 
 end

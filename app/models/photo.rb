@@ -3,6 +3,7 @@ class Photo < ActiveRecord::Base
 
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
   belongs_to :album
+  has_many :comments
 
   def allowed?(user)
     #user is owner, photo is public, or owner is sharing with user
