@@ -1,0 +1,26 @@
+Pixr.Collections.Photos = Backbone.Collection.extend({
+
+  model: Pixr.Models.Photo,
+
+  url: 'api/photos',
+
+  getOrFetch: function (id) {
+    var photo = this.get(id);
+
+    if (photo){
+      photo.fetch();
+    } else {
+      photo = new Pixr.Models.Photo({id: id});
+      var photos = this;
+
+      photo.fetch({
+        success: function() {
+          photos.add(photo);
+        }
+      });
+    }
+
+    return photo;
+  }
+
+});
