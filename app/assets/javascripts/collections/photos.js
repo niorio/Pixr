@@ -24,3 +24,5 @@ Pixr.Collections.Photos = Backbone.Collection.extend({
   }
 
 });
+
+Pixr.Collections.photos = new Pixr.Collections.Photos();

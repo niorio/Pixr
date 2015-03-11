@@ -4,7 +4,7 @@ window.Pixr = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Pixr.Routers.Photos({$rootEl: $('#content')});
+    new Pixr.Routers.router({$rootEl: $('#content')});
     Backbone.history.start();
   }
 };

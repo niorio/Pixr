@@ -1,0 +1,6 @@
+<h1><%= album.escape('title') %></h1>
+<ul>
+<% album.photos().each(function(photo){ %>
+  <li><a href="#/photos/<%=photo.id%>"><%= photo.escape('title') %></a></li>
+<% }); %>
+</ul>

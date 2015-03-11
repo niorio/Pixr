@@ -2,21 +2,15 @@
 <html>
 <head>
   <title>Pixr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <header class="header">
   <nav class="header-nav">
+    <h1 class="header-logo"><a href="#">pixr</a></h1>
 
-    <% if signed_in? %>
-      <form action="<%= session_url %>" method="post">
-        <%= csrf_token %>
-        <input type="hidden" name="_method" value="delete">
-        <button class="signout">Sign Out</button>
-      </form>
-    <% end %>
-
+    <%= signout_button %>
   </nav>
 </header>
 

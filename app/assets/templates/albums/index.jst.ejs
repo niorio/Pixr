@@ -1,0 +1,10 @@
+<h1>Albums</h1>
+
+<ul>
+<% albums.each( function(album){ %>
+
+  <li><a href="#/albums/<%= album.id %>"><%= album.escape('title') %></a></li>
+
+<% }); %>
+
+</ul>
