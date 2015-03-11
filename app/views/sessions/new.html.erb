@@ -4,15 +4,15 @@
 <form action="<%= session_url %>" method="post">
   <%= csrf_token %>
 
-  <label>Email:
-    <input type="text" name="user[email]" value="<%= @user.email %>">
+  <label>Username:
+    <input type="text" name="user[username]" value="<%= @user.username %>">
   </label>
   <label>Password:
     <input type="password" name="user[password]">
   </label>
 
   <button>Sign In</button>
-	
+
 	<a href="<%= new_user_url %>" class="new-user">Create Account</a>
 
 </form>
