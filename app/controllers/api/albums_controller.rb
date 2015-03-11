@@ -20,7 +20,7 @@ module Api
       @album = Album.includes(:photos).find(params[:id])
       
       if @album.owner == current_user
-        render json: @album
+        render :show
       else
         render json: ["You do not have permission to view this album"],
                       status: 403
