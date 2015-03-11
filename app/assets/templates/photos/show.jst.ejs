@@ -1,9 +1,13 @@
 <h1><%= photo.escape('title') %></h1>
 
+
+
 <ul class="comments">
 <% photo.comments().each(function(comment){ %>
   <aside class="comment"><%= comment.escape('body') %></aside>
   <aside class="comment-author"><%= comment.escape('author_name') %></aside>
+  <aside class="comment-time"><%= comment.escape('time_ago') %> ago</aside>
+
 <% }); %>
 </ul>
 
