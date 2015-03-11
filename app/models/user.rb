@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :photos, foreign_key: :owner_id, dependent: :destroy
   has_many :albums, foreign_key: :owner_id, dependent: :destroy
+  has_many :comments, foreign_key: :author_id
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
