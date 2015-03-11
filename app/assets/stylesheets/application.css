@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, a, h1, h2, section, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.group:after{
+  content: "";
+  display: block;
+  clear: both;
+}

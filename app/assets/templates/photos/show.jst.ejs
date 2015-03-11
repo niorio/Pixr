@@ -2,6 +2,7 @@
 
 <ul class="comments">
 <% photo.comments().each(function(comment){ %>
-  <%= comment.escape('body') %> --<%= comment.escape('author_name') %>
+  <aside class="comment"><%= comment.escape('body') %></aside>
+  <aside class="comment-author"><%= comment.escape('author_name') %></aside>
 <% }); %>
 </ul>

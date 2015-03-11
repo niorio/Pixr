@@ -11,7 +11,7 @@ module ApplicationHelper
     return nil unless signed_in?
 
     <<-HTML.html_safe
-      <form action="#{session_url}" method="post">
+      <form class="signout-button" action="#{session_url}" method="post">
         #{csrf_token}
         <input type="hidden" name="_method" value="delete">
         <button class="signout">Sign Out</button>

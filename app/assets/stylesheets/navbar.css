@@ -1,0 +1,46 @@
+.header {
+  background: black;
+  color: white;
+}
+
+.header-nav{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.header-logo a{
+  float: left;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.signout-button{
+  float:right;
+  padding: 15px;
+}
+
+.sub-header {
+  background: black;
+  color: white;
+  opacity: .7;
+}
+
+.sub-header-nav {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.sub-header-nav a {
+  display: block;
+  text-decoration: none;
+  font-family: sans-serif;
+  padding: 3px 10px;
+  float: left;
+}
+
+.sub-header-nav a:hover {
+  background: red;
+}
