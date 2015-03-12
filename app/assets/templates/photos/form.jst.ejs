@@ -1,0 +1,10 @@
+<form class="photo-form">
+	<label>Title:
+		<input type="text" name="title" value="<%= photo.escape('title') %>">
+	</label>
+	
+	<label>Photo:
+		<input type="file" name="image">
+	</label>
+	<button>Submit</button>
+</form>

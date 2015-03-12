@@ -6,6 +6,7 @@ Pixr.Routers.router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
+		'photos/new': 'photoForm',
     'photos/:id': 'show',
     'albums': 'albumIndex',
     'albums/:id': 'albumShow'
@@ -37,6 +38,12 @@ Pixr.Routers.router = Backbone.Router.extend({
     var albumShowView = new Pixr.Views.AlbumShow({ model: album });
     this._swapView(albumShowView);
   },
+	
+	photoForm: function () {
+		var photo = new Pixr.Models.Photo();
+		var photoFormView = new Pixr.Views.PhotoForm({ model: photo });
+		this._swapView(photoFormView)
+	},
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
