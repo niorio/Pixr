@@ -30,6 +30,10 @@ gem 'backbone-on-rails'
 
 gem 'figaro'
 
+gem "paperclip", "~> 4.2"
+
+gem 'aws-sdk', '< 2.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

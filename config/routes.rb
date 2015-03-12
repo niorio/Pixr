@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy, :edit]
   end
 
+  resources :photos, only: [:new]
+
 end

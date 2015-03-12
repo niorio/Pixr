@@ -1,5 +1,7 @@
 class Photo < ActiveRecord::Base
   validates :owner_id, :title, presence: true
+  has_attached_file :img
+  validates_attachment_content_type :img, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
   belongs_to :album
