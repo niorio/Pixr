@@ -45,7 +45,7 @@ module Api
 
     private
     def photo_params
-      params.require(:photo).permit(:title, :description, :img)
+      params.require(:photo).permit(:title, :description, :img, :album_id)
     end
 
   end

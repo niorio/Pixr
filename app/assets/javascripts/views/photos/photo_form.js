@@ -6,13 +6,18 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
 
   className: 'photo-form',
 
+  initialize: function () {
+    Pixr.Collections.albums.fetch();
+    this.listenTo(Pixr.Collections.albums, 'sync', this.render)
+  },
+
   events: {
     'submit': 'submitPhoto',
     "change #input-img-file": "changeImg"
   },
 
 	render: function () {
-		var content = this.template({ photo: this.model });
+		var content = this.template({ photo: this.model, albums: Pixr.Collections.albums });
 		this.$el.html(content);
 		return this;
 	},
