@@ -1,8 +1,12 @@
 <h1><%= photo.escape('title') %></h1>
 
-<img src="<%= photo.escape('url') %>"> 
+<img src="<%= photo.escape('url') %>">
 
 <section class="photo-description"><%= photo.escape('description') %></section>
+
+<% if (photo.get('myphoto')) { %>
+  <button class="delete-photo">delete</button>
+<% } %>
 
 <ul class="comments">
 <% photo.comments().each(function(comment){ %>

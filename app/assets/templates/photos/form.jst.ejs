@@ -17,6 +17,7 @@
 		<% albums.each(function(album){ %>
 			<option value="<%= album.id %>"><%= album.escape('title') %></option>
 		<% }); %>
+		<option value="new-album">New Album</option>
 	</select>
 </label>
 

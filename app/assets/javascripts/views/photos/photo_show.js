@@ -3,7 +3,8 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
   template: JST['photos/show'],
 
   events: {
-    'submit .comment-form': "submitComment"
+    'submit .comment-form': "submitComment",
+    'click .delete-photo': 'destroyPhoto'
   },
 
   initialize: function () {
@@ -26,6 +27,15 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     comment.save(attrs, {
       success: function () {
         photo.fetch();
+      }
+    });
+  },
+
+  destroyPhoto: function(event) {
+    event.preventDefault();
+    this.model.destroy({
+      success: function () {
+        Backbone.history.navigate("", {trigger: true});
       }
     });
   }

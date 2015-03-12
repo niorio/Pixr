@@ -8,6 +8,12 @@ module Api
 
     def create
       @photo = current_user.photos.new(photo_params)
+
+      if params[:photo][:new_album_name]
+        album = current_user.albums.create(title: params[:photo][:new_album_name])
+        @photo.album = album
+      end
+
       if @photo.save
         render json: @photo
       else
