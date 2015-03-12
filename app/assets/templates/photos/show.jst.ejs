@@ -1,6 +1,6 @@
 <h1><%= photo.escape('title') %></h1>
 
-
+<section class="photo-description"><%= photo.escape('description') %></section>
 
 <ul class="comments">
 <% photo.comments().each(function(comment){ %>
