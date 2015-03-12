@@ -4,7 +4,7 @@ module Api
 
     def index
       @albums = current_user.albums
-      render json: @albums
+      render 'index'
     end
 
     def create
@@ -18,7 +18,7 @@ module Api
 
     def show
       @album = Album.includes(:photos).find(params[:id])
-      
+
       if @album.owner == current_user
         render :show
       else
