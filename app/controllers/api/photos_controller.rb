@@ -3,7 +3,7 @@ module Api
 
     def index
       @photos = current_user.photos
-      render json: @photos
+      render 'index'
     end
 
     def create

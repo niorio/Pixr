@@ -7,7 +7,6 @@ Pixr.Views.PhotosIndex = Backbone.View.extend({
   },
 
   render: function () {
-    debugger;
     var content = this.template({ photos: this.collection });
     this.$el.html(content);
     return this;

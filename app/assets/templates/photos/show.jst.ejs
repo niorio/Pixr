@@ -1,5 +1,7 @@
 <h1><%= photo.escape('title') %></h1>
 
+<img src="<%= photo.escape('url') %>"> 
+
 <section class="photo-description"><%= photo.escape('description') %></section>
 
 <ul class="comments">
