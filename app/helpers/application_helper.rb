@@ -8,7 +8,6 @@ module ApplicationHelper
   end
 
   def signout_button
-    return nil unless signed_in?
 
     <<-HTML.html_safe
       <form class="signout-button" action="#{session_url}" method="post">

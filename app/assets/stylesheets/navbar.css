@@ -17,9 +17,17 @@
   font-size: 30px;
 }
 
-.signout-button{
-  float:right;
-  padding: 15px;
+.header-buttons{
+  float: right;
+}
+
+.username {
+  font-family: sans-serif;
+}
+
+.signout-button, .username{
+  float:left;
+  padding: 15px 0px 15px 10px;
 }
 
 .sub-header {

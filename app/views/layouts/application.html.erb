@@ -11,7 +11,12 @@
   <nav class="header-nav">
     <h1 class="header-logo"><a href="#">pixr</a></h1>
 
-    <%= signout_button %>
+    <div class="header-buttons">
+      <% if signed_in? %>
+        <label class="username"><%= current_user.username %></label>
+        <%= signout_button %>
+      <% end %>
+    </div>
   </nav>
 </header>
 
