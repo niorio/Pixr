@@ -3,6 +3,7 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :img, styles: { thumb: "400x325", full: "850x1000"}
   validates_attachment_content_type :img, :content_type => /\Aimage\/.*\Z/
+  validates_attachment :img, presence: true, size: {in: 0..20.megabytes}
 
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
   belongs_to :album
