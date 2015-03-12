@@ -14,6 +14,10 @@ Pixr.Models.Photo = Backbone.Model.extend({
       delete response.comments;
     }
     return response;
+  },
+
+  toJSON: function () {
+    return { photo: _.clone(this.attributes) }
   }
 
 });

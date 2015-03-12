@@ -1,15 +1,16 @@
-<form class="photo-form">
-	<label>Title:
-		<input type="text" name="title" value="<%= photo.escape('title') %>">
-	</label>
 
-	<label>Photo:
-		<input type="file" name="image">
-	</label>
+<label>Title:
+	<input type="text" name="title" value="<%= photo.escape('title') %>">
+</label>
 
-	<label>Description:
-		<textarea name="description" rows="8" cols="40"></textarea>
-	</label>
+<label>Photo:
+	<input type="file" name="img" id="input-img-file">
+</label>
 
-	<button>Submit</button>
-</form>
+<label>Description:
+	<textarea name="description" rows="8" cols="40"></textarea>
+</label>
+
+<button>Submit</button>
+
+<img src="" id="preview">
