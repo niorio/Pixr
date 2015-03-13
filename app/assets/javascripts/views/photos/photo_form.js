@@ -26,7 +26,7 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
   submitPhoto: function(event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
-    debugger;
+
     var that = this;
     this.model.save(attrs, {
       success: function (model) {
@@ -59,7 +59,6 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
     if ($albumSelect.val() !== "new-album"){
       return;
     }
-    console.log("hey")
     $albumInput = $('<input type="text" name="new_album_name">');
     $albumSelect.replaceWith($albumInput);
 
