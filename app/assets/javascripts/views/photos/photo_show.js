@@ -38,13 +38,15 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
   submitComment: function(event) {
     event.preventDefault();
     attrs = $(event.target).serializeJSON();
+    var commentBox = this.$('textarea');
+
     var comment = new Pixr.Models.Comment();
-    comment.set('time_ago', "just now")
     comment.set('photo_id', this.model.id)
 
     var that = this;
     comment.save(attrs, {
       success: function (model) {
+        commentBox.val('');
         that.appendComment(model);
       }
     });

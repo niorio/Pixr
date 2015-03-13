@@ -3,8 +3,10 @@ module Api
 
     def create
       @comment = current_user.comments.new(comment_params)
-      if @comment.save
-        render json: @comment
+      if @comment.save!
+        render 'show'
+      else
+        render json: {}
       end
     end
 
