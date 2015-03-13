@@ -73,7 +73,8 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     var that = this;
 
     this.model.save({title: newTitle}, {
-      success: function () {
+      wait: true,
+      error: function () {
         that.render();
       }
     });
@@ -92,15 +93,7 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     var newDescription = $(event.currentTarget).val();
     var that = this;
 
-    this.model.save({description: newDescription}, {
-      success: function () {
-        console.log("success");
-      },
-      error: function () {
-        console.log("error");
-        that.render();
-      }
-    });
+    this.model.save({description: newDescription});
   },
 
   remove: function() {

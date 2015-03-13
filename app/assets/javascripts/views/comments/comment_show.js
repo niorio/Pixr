@@ -3,7 +3,7 @@ Pixr.Views.CommentShow = Backbone.View.extend({
   template: JST['comments/show'],
 
   tagName: 'li',
-  
+
   events: {
     'click .delete-comment': 'destroyComment'
   },
