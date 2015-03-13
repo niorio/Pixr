@@ -13,24 +13,38 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
+    this.subviews = [];
   },
 
   render: function () {
     var content = this.template({ photo: this.model });
     this.$el.html(content);
+
+    var that = this;
+
+    this.model.comments().each(function(comment){
+      that.appendComment(comment);
+    })
+
     return this;
+  },
+
+  appendComment: function (comment) {
+    var commentView = new Pixr.Views.CommentShow({ model: comment });
+    this.$('.comments').append(commentView.render().$el);
+    this.subviews.push(commentView);
   },
 
   submitComment: function(event) {
     event.preventDefault();
     attrs = $(event.target).serializeJSON();
     var comment = new Pixr.Models.Comment();
+    comment.set('time_ago', "just now")
 
-    var photo = this.model;
-
+    var that = this;
     comment.save(attrs, {
-      success: function () {
-        photo.fetch();
+      success: function (model) {
+        that.appendComment(model);
       }
     });
   },
@@ -86,6 +100,13 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
         that.render();
       }
     });
+  },
+
+  remove: function() {
+    _.each(this.subviews, function(subview){
+      subview.remove();
+    });
+    Backbone.View.prototype.remove.call(this);
   }
 
 
