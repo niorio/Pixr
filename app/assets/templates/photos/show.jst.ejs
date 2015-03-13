@@ -1,8 +1,16 @@
-<h1><%= photo.escape('title') %></h1>
+<h1 class="photo-title"><%= photo.escape('title') %>
+<% if (photo.get('myphoto')) { %>
+  <button class="edit-title">edit</button>
+<% } %>
+</h1>
 
 <img src="<%= photo.escape('url') %>">
 
-<section class="photo-description"><%= photo.escape('description') %></section>
+<section class="photo-description"><%= photo.escape('description') %>
+<% if (photo.get('myphoto')) { %>
+  <button class="edit-description">edit</button>
+<% } %>
+</section>
 
 <% if (photo.get('myphoto')) { %>
   <button class="delete-photo">delete</button>

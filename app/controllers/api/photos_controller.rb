@@ -33,7 +33,7 @@ module Api
 
     end
 
-    def edit
+    def update
       @photo = current_user.photos.find(params[:id])
       @photo.update(photo_params)
       if @photo.save

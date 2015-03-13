@@ -5,10 +5,9 @@
 }
 
 .page-title{
-  position: relative;
-  left: 100px;
   display: block;
   margin: 10px auto;
+  width: 80px;
   font-family: sans-serif;
   font-size: 30px;
 }
