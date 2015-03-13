@@ -100,6 +100,7 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     _.each(this.subviews, function(subview){
       subview.remove();
     });
+    this.subviews = [];
     Backbone.View.prototype.remove.call(this);
   }
 

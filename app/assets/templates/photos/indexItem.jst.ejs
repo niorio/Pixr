@@ -1,0 +1,5 @@
+
+<a href="#/photos/<%= photo.id %>">
+  <img src="<%= photo.escape('thumb_url') %>">
+  <figcaption class="photo-details"><%= photo.escape('title') %></figcaption>
+</a>
