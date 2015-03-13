@@ -6,7 +6,6 @@
   float: left;
   height: 250px;
   width: auto;
-  margin: 0px 5px;
 }
 
 .photo-form{
@@ -20,4 +19,25 @@
 
 #preview{
   width: 100px;
+}
+
+.photo-details{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  font-family: sans-serif;
+  padding: 10px 10%;
+  color: white;
+  background: black;
+  opacity: 0;
+  width: 80%;
+}
+
+.imgcontainer:hover .photo-details{
+  opacity: .5;
+}
+
+.imgcontainer{
+  position: relative;
+  float: left;
 }
