@@ -40,6 +40,7 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     attrs = $(event.target).serializeJSON();
     var comment = new Pixr.Models.Comment();
     comment.set('time_ago', "just now")
+    comment.set('photo_id', this.model.id)
 
     var that = this;
     comment.save(attrs, {
