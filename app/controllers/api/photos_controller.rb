@@ -10,7 +10,7 @@ module Api
       @photo = current_user.photos.new(photo_params)
 
       if params[:photo][:new_album_name]
-        album = current_user.albums.create(title: params[:photo][:new_album_name])
+        album = current_user.albums.new(title: params[:photo][:new_album_name])
         @photo.album = album
       end
 

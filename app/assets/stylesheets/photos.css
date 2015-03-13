@@ -1,0 +1,23 @@
+.photos * {
+  display:block;
+}
+
+.photos img{
+  float: left;
+  height: 250px;
+  width: auto;
+  margin: 0px 5px;
+}
+
+.photo-form{
+  display:block;
+  background: #70B8FF;
+  width: 450px;
+  padding: 50px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+#preview{
+  width: 100px;
+}
