@@ -79,6 +79,10 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
 
     this.model.save({description: newDescription}, {
       success: function () {
+        console.log("success");
+      },
+      error: function () {
+        console.log("error");
         that.render();
       }
     });

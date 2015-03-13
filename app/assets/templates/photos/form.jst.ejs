@@ -1,3 +1,11 @@
+<% if (errors) { %>
+	<ul class="errors">
+	<% _.each(errors, function(error){ %>
+		<li> <%= error %> </li>
+	<% }); %>
+	<ul>
+<% } %>
+
 
 <label>Title:
 	<input type="text" name="title" value="<%= photo.escape('title') %>">

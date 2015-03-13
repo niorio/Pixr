@@ -18,7 +18,9 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
   },
 
 	render: function () {
-		var content = this.template({ photo: this.model, albums: Pixr.Collections.albums });
+		var content = this.template({ photo: this.model,
+                  albums: Pixr.Collections.albums,
+                  errors: this.errors});
 		this.$el.html(content);
 		return this;
 	},
@@ -32,6 +34,10 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
       success: function (model) {
         that.collection.add(model);
         Backbone.history.navigate("photos/" + model.id, { trigger: true });
+      },
+      error: function (model, response){
+        that.errors = JSON.parse(response.responseText);
+        that.render();
       }
     });
   },
