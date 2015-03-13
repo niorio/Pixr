@@ -2,6 +2,8 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
 
   template: JST['photos/show'],
 
+  className: 'photo-show',
+
   events: {
     'submit .comment-form': "submitComment",
     'click .delete-photo': 'destroyPhoto',

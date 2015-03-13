@@ -3,3 +3,16 @@
   font-family: sans-serif;
   font-size: 9px;
 }
+
+.comments{
+  list-style: none;
+}
+
+
+
+.comments li:hover{
+  background: #E6E6E6;
+}
+.comments li{
+  width: 400px;
+}

@@ -41,3 +41,9 @@
   position: relative;
   float: left;
 }
+
+.photo-show{
+  display: block;
+  width: 900px;
+  margin: auto;
+}
