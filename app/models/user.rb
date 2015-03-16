@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :photos, foreign_key: :owner_id, dependent: :destroy
   has_many :albums, foreign_key: :owner_id, dependent: :destroy
   has_many :comments, foreign_key: :author_id, dependent: :destroy
+  has_many :likes
+  has_many :liked_photos, through: :likes, source: :photo
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -32,6 +34,10 @@ class User < ActiveRecord::Base
 
   def valid_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+  
+  def likes?(photo)
+    self.likes.where(photo: photo).exists?
   end
 
 

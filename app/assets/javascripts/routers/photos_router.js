@@ -34,8 +34,7 @@ Pixr.Routers.router = Backbone.Router.extend({
 
   albumShow: function (id) {
     var album = Pixr.Collections.albums.getOrFetch(id);
-    album.fetch();
-    var albumShowView = new Pixr.Views.PhotosIndex({ collection: album.photos() });
+    var albumShowView = new Pixr.Views.AlbumShow({ model: album });
     this._swapView(albumShowView);
   },
 

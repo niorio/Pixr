@@ -4,11 +4,12 @@ Pixr.Views.PhotosIndex = Backbone.View.extend({
 
   tagName: 'ul',
 
-  className: 'photos group',
+  className: 'photos',
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'change', this.render);
+		
     this.subviews = [];
   },
 
