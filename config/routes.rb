@@ -10,8 +10,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy, :update, :show, :index]
     resources :albums, only: [:create, :destroy, :update, :show, :index]
     resources :comments, only: [:create, :destroy, :update]
+    post '/likes', to: 'likes#toggle'
   end
-
-  resources :photos, only: [:new]
 
 end

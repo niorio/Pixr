@@ -22,6 +22,10 @@ Pixr.Views.PhotoShow = Backbone.View.extend({
     var content = this.template({ photo: this.model });
     this.$el.html(content);
 
+    likeview = new Pixr.Views.Like({ model: this.model });
+    this.subviews.push(likeview);
+    this.$('.like').html(likeview.render().$el);
+
     var that = this;
 
     this.model.comments().each(function(comment){

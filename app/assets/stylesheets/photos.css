@@ -33,6 +33,10 @@
   width: 80%;
 }
 
+.like-counter{
+  float: right;
+}
+
 .imgcontainer:hover .photo-details{
   opacity: .5;
 }

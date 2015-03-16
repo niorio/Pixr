@@ -14,9 +14,13 @@ class Photo < ActiveRecord::Base
     #user is owner, photo is public, or owner is sharing with user
     return true if owner == user
   end
-  
+
   def liked_by?(user)
     self.likes.where(user: user).exists?
+  end
+
+  def like_count
+    self.likes.count
   end
 
 end
