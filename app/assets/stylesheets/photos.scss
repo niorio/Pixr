@@ -31,6 +31,7 @@
   background: black;
   opacity: 0;
   width: 80%;
+  transition: opacity 0.5s linear;
 }
 
 .like-counter{
@@ -39,32 +40,13 @@
 
 .imgcontainer:hover .photo-details{
   opacity: .5;
+  transition: opacity 0.3s linear;
+
 }
 
 .imgcontainer{
   position: relative;
   float: left;
-}
-
-.photo-show{
-  width: 900px;
-  margin: auto;
-}
-
-.liked{
-  float: left;
-  width: 30px;
-  height: 30px;
-  background-image: image_url('liked.svg');
-  background-size: contain;
-}
-
-.not-liked{
-  float: left;
-  width: 30px;
-  height: 30px;
-  background-image: image_url('not_liked.svg');
-  background-size: contain;
 }
 
 .spinner{

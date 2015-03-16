@@ -1,0 +1,63 @@
+// .photo-show{
+//   width: 900px;
+//   margin: auto;
+//   background-color: #1A1A1A;
+// }
+
+.photo-backdrop{
+  background-color: #333333;
+  color: white;
+}
+
+.photo-display{
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.photo-display > img{
+  display: block;
+  margin: 0 auto;
+}
+
+.photo-show h1{
+  font-size: 32px;
+}
+
+.photo-info{
+  float: left;
+}
+
+.like{
+  float: right;
+}
+
+.liked{
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('liked.svg');
+  background-size: contain;
+  cursor: pointer;
+}
+
+.not-liked{
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('not_liked.svg');
+  background-size: contain;
+  cursor: pointer;
+}
+
+.like-count{
+  display: block;
+  float: left;
+  padding: 10px 5px;
+}
+
+.extras{
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+}

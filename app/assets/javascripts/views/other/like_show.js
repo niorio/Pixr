@@ -11,10 +11,11 @@ Pixr.Views.Like = Backbone.View.extend({
     } else {
       $icon = $('<div class="not-liked">')
     }
-    var count = this.model.get('like_count');
+    var $count = $('<aside class="like-count">');
+    $count.text(this.model.get('like_count'));
 
     this.$el.html($icon);
-    this.$el.append(count);
+    this.$el.append($count);
     return this;
   },
 

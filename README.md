@@ -13,7 +13,7 @@ Pixr is a clone of Flickr built on Rails and Backbone. Users can:
 - [x] Create Photo Albums
 - [x] View photos and albums
 - [x] Comment on Photos
-- [ ] Like Photos
+- [x] Like Photos
 - [ ] Tag photos
 - [ ] Friend each other
 - [ ] View friend's shared photos
