@@ -28,9 +28,9 @@ Pixr.Views.Like = Backbone.View.extend({
       success: function () {
         photo.set({liked: !photo.get('liked')});
         if (photo.get('liked')){
-          photo.set('like_count', photo.get('like_count') + 1)
+          photo.set('like_count', photo.get('like_count') + 1);
         } else {
-          photo.set('like_count', photo.get('like_count') - 1)
+          photo.set('like_count', photo.get('like_count') - 1);
         }
         view.render();
       }
