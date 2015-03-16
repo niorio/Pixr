@@ -7,9 +7,9 @@ Pixr.Views.Like = Backbone.View.extend({
   render: function () {
     var content
     if (this.model.get('liked')){
-      content = "UNLIKE"
+      content = "UNLIKE " + this.model.get('like_count');
     } else {
-      content = "LIKE"
+      content = "LIKE " + this.model.get('like_count');
     }
     this.$el.html(content);
     return this;
@@ -18,7 +18,7 @@ Pixr.Views.Like = Backbone.View.extend({
   toggleLike: function () {
 
     var photo = this.model;
-    var that = this;
+    var view = this;
 
     $.ajax({
       url:'api/likes',
@@ -27,7 +27,12 @@ Pixr.Views.Like = Backbone.View.extend({
       data: {photo_id: photo.id},
       success: function () {
         photo.set({liked: !photo.get('liked')});
-        that.render();
+        if (photo.get('liked')){
+          photo.set('like_count', photo.get('like_count') + 1)
+        } else {
+          photo.set('like_count', photo.get('like_count') - 1)
+        }
+        view.render();
       }
     })
   }
