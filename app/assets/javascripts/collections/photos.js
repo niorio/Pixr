@@ -25,4 +25,9 @@ Pixr.Collections.Photos = Backbone.Collection.extend({
 
 });
 
+Pixr.Collections.LikedPhotos = Backbone.Collection.extend({
+  url: 'api/photos/liked',
+  model: Pixr.Models.Photo
+})
+
 Pixr.Collections.photos = new Pixr.Collections.Photos();

@@ -49,6 +49,11 @@ module Api
       render json: {}
     end
 
+    def liked
+      @photos = current_user.liked_photos
+      render 'index'
+    end
+
     private
     def photo_params
       params.require(:photo).permit(:title, :description, :img, :album_id)

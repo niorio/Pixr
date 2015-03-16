@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
+    get '/photos/liked', to:'photos#liked'
     resources :photos, only: [:create, :destroy, :update, :show, :index]
     resources :albums, only: [:create, :destroy, :update, :show, :index]
     resources :comments, only: [:create, :destroy, :update]

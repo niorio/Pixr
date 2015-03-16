@@ -7,6 +7,7 @@ Pixr.Routers.router = Backbone.Router.extend({
   routes: {
     '': 'index',
 		'photos/new': 'photosNew',
+    'photos/liked': 'photosLiked',
     'photos/:id': 'show',
     'albums': 'albumIndex',
     'albums/:id': 'albumShow'
@@ -45,6 +46,13 @@ Pixr.Routers.router = Backbone.Router.extend({
       collection: Pixr.Collections.photos });
 		this._swapView(photoFormView)
 	},
+
+  photosLiked: function () {
+    var likedPhotos = new Pixr.Collections.LikedPhotos();
+    likedPhotos.fetch();
+    var likeIndex = new Pixr.Views.PhotosIndex({ collection: likedPhotos });
+    this._swapView(likeIndex);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
