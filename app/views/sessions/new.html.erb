@@ -1,20 +1,20 @@
-<section class="login-form">
-  <h1>Log In</h1>
-  <%= flash.now[:errors] %>
+<div class="splash">
+  <section class="login-form">
+    <h1>Log In</h1>
+    <%= flash.now[:errors] %>
 
-  <form action="<%= session_url %>" method="post">
-    <%= csrf_token %>
+    <form action="<%= session_url %>" method="post">
+      <%= csrf_token %>
 
-    <label>Username:
-      <input type="text" name="user[username]" value="<%= @user.username %>">
-    </label>
-    <label>Password:
-      <input type="password" name="user[password]">
-    </label>
+      <input class="login-input" type="text" name="user[username]"
+          value="<%= @user.username %>" placeholder="Username">
+      <input class="login-input" type="password" name="user[password]"
+          placeholder="Password">
 
-    <button>Sign In</button>
+      <button class="login-button">Sign In</button>
 
-  	<a href="<%= new_user_url %>" class="new-user">Create Account</a>
+    	<a href="<%= new_user_url %>" class="new-user">Create Account</a>
 
-  </form>
-</login>
+    </form>
+  </section>
+</div>
