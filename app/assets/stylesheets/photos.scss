@@ -47,7 +47,28 @@
 }
 
 .photo-show{
-  display: block;
   width: 900px;
   margin: auto;
+}
+
+.liked{
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('liked.svg');
+  background-size: contain;
+}
+
+.not-liked{
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-image: image_url('not_liked.svg');
+  background-size: contain;
+}
+
+.spinner{
+  width: 34px;
+  height: 34px;
+  background-image: image_url('spinner.gif')
 }

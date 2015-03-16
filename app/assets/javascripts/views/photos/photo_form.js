@@ -27,15 +27,23 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
 
   submitPhoto: function(event) {
     event.preventDefault();
+
+    this.$('.spinner').removeClass('hidden');
+    this.$('button').prop("disabled", true);
+
     var attrs = this.$el.serializeJSON();
 
     var that = this;
     this.model.save(attrs, {
       success: function (model) {
+        this.$('.spinner').addClass('hidden');
+        this.$('button').prop("disabled", false);
         that.collection.add(model);
         Backbone.history.navigate("photos/" + model.id, { trigger: true });
       },
       error: function (model, response){
+        this.$('.spinner').addClass('hidden');
+        this.$('button').prop("disabled", false);
         that.errors = JSON.parse(response.responseText);
         that.render();
       }
@@ -56,7 +64,7 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
   },
 
   previewImg: function (src) {
-    this.$('#preview').attr('src', src);
+    this.$('#preview').removeClass('hidden').attr('src', src);
   },
 
   newAlbum: function(event) {

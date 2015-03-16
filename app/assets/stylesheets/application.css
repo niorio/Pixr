@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, a, h1, h2, section, ul, li {
+html, body, a, h1, h2, section, ul, li, div {
   margin: 0;
   padding: 0;
   border: 0;
@@ -22,8 +22,16 @@ html, body, a, h1, h2, section, ul, li {
   color: inherit;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .group:after{
   content: "";
   display: block;
   clear: both;
+}
+
+.hidden{
+  display: none;
 }
