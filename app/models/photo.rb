@@ -9,6 +9,8 @@ class Photo < ActiveRecord::Base
   belongs_to :album
   has_many :comments
   has_many :likes
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   def allowed?(user)
     #user is owner, photo is public, or owner is sharing with user
