@@ -14,6 +14,8 @@ module Api
         @photo.album = album
       end
 
+      @photo.parse_tags(params[:photo][:tags])
+
       if @photo.save
         render json: @photo
       else

@@ -6,3 +6,7 @@ json.comments @photo.comments do |comment|
 end
 json.like_count @photo.like_count
 json.liked @photo.liked_by?(current_user)
+json.tags @photo.taggings do |tagging|
+  json.name tagging.tag.name
+  json.id tagging.id
+end

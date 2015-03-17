@@ -25,4 +25,14 @@ class Photo < ActiveRecord::Base
     self.likes.count
   end
 
+
+  def parse_tags(string)
+    tagnames = string.split(",").map(&:strip)
+    _tags = tagnames.map do |tagname|
+      Tag.where(name: tagname).first_or_create
+    end
+
+    self.tags = _tags
+  end
+
 end
