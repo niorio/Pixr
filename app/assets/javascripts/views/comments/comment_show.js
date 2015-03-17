@@ -4,6 +4,8 @@ Pixr.Views.CommentShow = Backbone.View.extend({
 
   tagName: 'li',
 
+  className: 'group',
+
   events: {
     'click .delete-comment': 'destroyComment'
   },

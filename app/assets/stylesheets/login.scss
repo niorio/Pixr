@@ -29,7 +29,7 @@
 
 .login-input:focus{
   outline:none;
-  border: 1px solid orange;
+  border: 1px solid #70B8FF;
 }
 
 .login-button, .new-user{
@@ -40,7 +40,6 @@
   width: 204px;
   font-size: 20px;
   margin: 10px auto;
-  // border-radius: 5px;
   background: #0c0;
   box-shadow: 0 3px 0 0 #070;
   border: none;

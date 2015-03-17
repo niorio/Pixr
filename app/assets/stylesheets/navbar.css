@@ -25,9 +25,12 @@
   font-family: sans-serif;
 }
 
-.signout-button, .username{
-  float:left;
-  padding: 15px 0px 15px 10px;
+.username{
+  margin: 15px 10px;
+}
+
+.header-buttons > *{
+  float: left;
 }
 
 .sub-header {
@@ -50,4 +53,20 @@
 
 .sub-header-nav a:hover {
   background: red;
+}
+
+.signout{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  background: black;
+  border: 3px solid white;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.signout:hover{
+  background: #4C4C4C;
 }

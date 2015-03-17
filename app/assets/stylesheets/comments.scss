@@ -1,0 +1,38 @@
+.comment-time{
+  color: #808080;
+  font-family: sans-serif;
+  font-size: 9px;
+}
+
+.comments{
+  list-style: none;
+}
+
+.comments li:hover{
+  background: #E6E6E6;
+}
+.comments li{
+  width: 450px;
+}
+
+.delete-comment{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: image_url('close.png');
+  background-size: contain;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  float: right;
+}
+
+.comment{
+  width: 430px;
+  
+}
+
+.comment, .comment-author, .comment-time{
+  float: left;
+}
