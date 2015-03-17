@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializejson.min
+//= require jquery.justifiedGallery.min
 //= require underscore
 //= require backbone
 //= require pixr

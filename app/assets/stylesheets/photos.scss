@@ -2,11 +2,11 @@
   display:block;
 }
 
-.photos img{
-  float: left;
-  height: 250px;
-  width: auto;
-}
+// .photos img{
+//   float: left;
+//   height: 250px;
+//   width: auto;
+// }
 
 .photo-form{
   display:block;
@@ -38,15 +38,14 @@
   float: right;
 }
 
-.imgcontainer:hover .photo-details{
+.photos a:hover .photo-details{
   opacity: .6;
   transition: opacity 0.3s linear;
 
 }
 
-.imgcontainer{
+.photos a{
   position: relative;
-  float: left;
 }
 
 .spinner{

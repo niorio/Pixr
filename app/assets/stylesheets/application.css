@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require justifiedGallery.min
  */
 
 html, body, a, h1, h2, section, ul, li, div {

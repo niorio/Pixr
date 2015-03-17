@@ -9,7 +9,7 @@ Pixr.Views.PhotosIndex = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'change', this.render);
-		
+
     this.subviews = [];
   },
 
@@ -19,6 +19,12 @@ Pixr.Views.PhotosIndex = Backbone.View.extend({
     this.collection.each(function(photo) {
       that.appendPhoto(photo);
     })
+
+    this.$el.justifiedGallery({
+      rowHeight: 200,
+      lastRow: 'nojustify',
+      margins: 3
+    });
 
     return this;
   },
