@@ -4,7 +4,7 @@
 }
 
 .header-nav{
-  width: 900px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .sub-header-nav {
-  width: 900px;
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -45,7 +45,7 @@
   display: block;
   text-decoration: none;
   font-family: sans-serif;
-  padding: 4px 15px 4px 10px;
+  padding: 4px 25px;
   float: left;
 }
 
