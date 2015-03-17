@@ -31,9 +31,8 @@
 }
 
 .sub-header {
-  background: black;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  opacity: .7;
 }
 
 .sub-header-nav {
