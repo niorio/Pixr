@@ -62,8 +62,9 @@
 
 .splash{
   // background-image: image_url('splash3.jpg');
-  background-size: 100% auto;
-  width: 900px;
-  height: 900px;
-  margin: 30px auto;
+  background-size: cover;
+  width:100%;
+  height: auto;
+  position: relative;
+  top: 50px;
 }

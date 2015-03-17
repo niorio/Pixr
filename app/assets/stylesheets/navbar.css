@@ -1,6 +1,15 @@
 .header {
   background: black;
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+#content{
+  position: relative;
+  top: 74px;
 }
 
 .header-nav{
@@ -36,6 +45,10 @@
 .sub-header {
   background: rgba(0, 0, 0, 0.6);
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 50px;
 }
 
 .sub-header-nav {
