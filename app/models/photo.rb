@@ -13,8 +13,11 @@ class Photo < ActiveRecord::Base
   has_many :tags, through: :taggings
 
   def allowed?(user)
-    #user is owner, photo is public, or owner is sharing with user
-    return true if owner == user
+    if owner === user || user.follows?(owner)
+      return true
+    else
+      return false
+    end
   end
 
   def liked_by?(user)

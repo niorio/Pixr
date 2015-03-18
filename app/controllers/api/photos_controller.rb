@@ -56,6 +56,11 @@ module Api
       render 'index'
     end
 
+    def followed
+      @photos = current_user.followed_photos
+      render 'index'
+    end
+
     private
     def photo_params
       params.require(:photo).permit(:title, :description, :img, :album_id)

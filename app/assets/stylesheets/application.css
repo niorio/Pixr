@@ -25,6 +25,8 @@ html, body, a, h1, h2, section, ul, li, div {
 
 body {
   font-family: sans-serif;
+  height: 100%;
+  background-color: #eee;
 }
 
 .group:after{

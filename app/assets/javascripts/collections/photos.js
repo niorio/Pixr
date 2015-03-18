@@ -30,4 +30,9 @@ Pixr.Collections.LikedPhotos = Backbone.Collection.extend({
   model: Pixr.Models.Photo
 })
 
+Pixr.Collections.FollowedPhotos = Backbone.Collection.extend({
+  url: 'api/photos/followed',
+  model: Pixr.Models.Photo
+})
+
 Pixr.Collections.photos = new Pixr.Collections.Photos();

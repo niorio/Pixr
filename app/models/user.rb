@@ -46,5 +46,9 @@ class User < ActiveRecord::Base
     self.likes.where(photo: photo).exists?
   end
 
+  def follows?(user)
+    self.followees.include?(user)
+  end
+
 
 end
