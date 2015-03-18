@@ -25,9 +25,7 @@ module ApplicationHelper
            baseProfile="full"
            width="40" height="40"
            xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="5" fill="#00ffff" />
-        <circle cx="16" cy="32" r="5" fill="#ff00ff" />
-        <circle cx="32" cy="25" r="5" fill="#ffff00" />
+        <circle cx="20" cy="20" r="15" fill="#00ffff" />
       </svg>
 
     HTML

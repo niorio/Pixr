@@ -12,7 +12,9 @@
     <h1>Following</h1>
     <ul>
       <% followers.each(function(follower){ %>
-        <li><%= follower.escape('username') %></li>
+        <li><%= follower.escape('username') %>
+          <button class="follow"></button>
+        </li>
       <% }); %>
     </ul>
   </section>
