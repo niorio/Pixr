@@ -7,13 +7,13 @@ Pixr.Views.PhotosIndex = Backbone.View.extend({
   className: 'photos',
 
   initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render);
-    this.listenTo(this.collection, 'change', this.render);
+    this.listenTo(this.collection, 'sync add', this.render);
 
     this.subviews = [];
   },
 
   render: function () {
+    console.log("render")
     var that = this;
     this.$el.empty();
     this.collection.each(function(photo) {
