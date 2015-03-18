@@ -3,10 +3,11 @@
 <ul class="album-list">
 <% albums.each( function(album){ %>
 
-  <li><a href="#/albums/<%= album.id %>">
+  <a href="#/albums/<%= album.id %>">
     <img src="<%= album.escape('preview_url') %>">
-    <figcaption class="album-label"><%= album.escape('title') %></figcaption></a>
-  </li>
+    <figcaption class="album-label"><%= album.escape('title') %></figcaption>
+  </a>
+
 
 <% }); %>
 

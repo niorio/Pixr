@@ -1,6 +1,6 @@
 Pixr.Views.UsersIndex = Backbone.View.extend({
 
-  intitialize: function(options){
+  initialize: function(options){
     this.followers = options.followers;
     this.followees = options.followees;
     this.listenTo(this.followees, 'sync', this.render);
@@ -11,7 +11,7 @@ Pixr.Views.UsersIndex = Backbone.View.extend({
   template: JST['users/index'],
 
   render: function(){
-    content = this.template();
+    content = this.template({followees: this.followees, followers: this.followers});
     this.$el.html(content);
     return this;
 

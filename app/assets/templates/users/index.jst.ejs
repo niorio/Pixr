@@ -1,8 +1,20 @@
-test!
 <section class="users-lists">
   <section class="following">
+  <h1>Following</h1>
+  <ul>
+    <% followees.each(function(followee){ %>
+      <li><%= followee.escape('username') %></li>
+    <% }); %>
+  </ul>
   </section>
+
   <section class="followers">
+    <h1>Following</h1>
+    <ul>
+      <% followers.each(function(follower){ %>
+        <li><%= follower.escape('username') %></li>
+      <% }); %>
+    </ul>
   </section>
 </section>
 

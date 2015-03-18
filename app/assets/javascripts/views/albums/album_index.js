@@ -9,6 +9,14 @@ Pixr.Views.AlbumsIndex = Backbone.View.extend({
   render: function () {
     var content = this.template({ albums: this.collection });
     this.$el.html(content);
+
+    this.$('.album-list').justifiedGallery({
+      rowHeight: 250,
+      lastRow: 'nojustify',
+      margins: 25
+    });
+
+
     return this;
   }
 
