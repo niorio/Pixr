@@ -1,14 +1,17 @@
 Pixr.Views.AlbumShow = Backbone.View.extend({
 
-  template: JST['albums/show'],
-
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
   },
 
+  className: 'album-show',
+
   render: function () {
-    var content = this.template({ album: this.model });
-    this.$el.html(content);
+    this.$el.empty();
+    var title = this.model.escape('title');
+    this.$el.append($('<h1 class="album-title">').text(title));
+    var grid = new Pixr.Views.PhotosIndex({ collection: this.model.photos() });
+    this.$el.append(grid.render().$el);
     return this;
   }
 

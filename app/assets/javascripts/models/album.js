@@ -10,7 +10,6 @@ Pixr.Models.Album = Backbone.Model.extend({
 
   parse: function(response) {
     if (response.photos){
-      console.log("added to collection")
       this.photos().set(response.photos);
       delete response.photos;
     }

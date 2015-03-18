@@ -11,3 +11,10 @@
   font-family: sans-serif;
   font-size: 30px;
 }
+
+.album-title{
+  display: block;
+  padding-top: 20px;
+  padding-left: 3px;
+  font-size: 30px;
+}

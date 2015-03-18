@@ -1,6 +1,0 @@
-<h1><%= album.escape('title') %></h1>
-<ul class="photos">
-<% album.photos().each(function(photo){ %>
-  <li><a href="#/photos/<%=photo.id%>"> <img src="<%= photo.escape('thumb_url') %>"></a></li>
-<% }); %>
-</ul>
