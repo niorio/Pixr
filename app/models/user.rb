@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_photos, through: :likes, source: :photo
 
+  has_many :in_follows, class_name: "Follow", foreign_key: "followee_id"
+  has_many :out_follows, class_name: "Follow", foreign_key: "follower_id"
+  has_many :followers, through: :in_follows, source: :follower
+  has_many :followees, through: :out_follows, source: :followee
+  has_many :followed_photos, through: :followees, source: :photos
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user
@@ -35,7 +41,7 @@ class User < ActiveRecord::Base
   def valid_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
-  
+
   def likes?(photo)
     self.likes.where(photo: photo).exists?
   end
