@@ -12,8 +12,10 @@ class Photo < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  scope :sharable, -> { where(private: false) }
+
   def allowed?(user)
-    if owner === user || user.follows?(owner)
+    if owner === user || (user.follows?(owner) && !(self.private))
       return true
     else
       return false

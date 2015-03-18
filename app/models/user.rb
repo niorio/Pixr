@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :out_follows, class_name: "Follow", foreign_key: "follower_id"
   has_many :followers, through: :in_follows, source: :follower
   has_many :followees, through: :out_follows, source: :followee
-  has_many :followed_photos, through: :followees, source: :photos
+  has_many :followee_photos, through: :followees, source: :photos
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -50,5 +50,8 @@ class User < ActiveRecord::Base
     self.followees.include?(user)
   end
 
+  def followed_photos
+    self.followee_photos.sharable
+  end
 
 end
