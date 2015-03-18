@@ -21,7 +21,7 @@
 }
 
 .album-list a:hover{
-  box-shadow: 6px 6px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 9px 9px 20px 0px rgba(0,0,0,0.75);
 }
 
 .album-label{
