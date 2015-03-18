@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :albums, only: [:create, :destroy, :update, :show, :index]
     resources :comments, only: [:create, :destroy, :update]
     post '/likes', to: 'likes#toggle'
+    get '/users/following', to: 'users#following'
+    get '/users/followers', to: 'users#followers'
+    get '/users/:id', to: 'users#show'
+    resources :follows, only: [:create, :destroy]
   end
 
 end
