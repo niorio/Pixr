@@ -3,8 +3,7 @@ module Api
 
 
     def index
-      @albums = current_user.albums
-      render 'index'
+      @albums = current_user.albums.joins(:photos).group('albums.id').having('count(*) > 0')
     end
 
     def create
