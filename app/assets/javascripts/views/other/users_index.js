@@ -1,10 +1,7 @@
 Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
 
-  initialize: function(options){
-    this.followers = options.followers;
-    this.followees = options.followees;
-    this.listenTo(this.followees, 'sync change', this.render);
-    this.listenTo(this.followers, 'sync change', this.render);
+  initialize: function(){
+    this.listenTo(this.collection, 'sync add remove', this.render);
 
   },
 
@@ -16,13 +13,8 @@ Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
     var view = this;
     var userView;
 
-    this.followers.each( function(follower) {
-      userView = new Pixr.Views.UserCard({ model: follower })
-      view.addSubview('.followers-list', userView)
-    });
-
-    this.followees.each( function(follower) {
-      userView = new Pixr.Views.UserCard({ model: follower })
+    this.collection.each( function(follower) {
+      userView = new Pixr.Views.UserCard({ model: follower, collection: view.collection })
       view.addSubview('.following-list', userView)
     });
 

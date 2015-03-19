@@ -43,6 +43,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
       data: {followee_id: followee.id},
       success: function () {
         followee.set({following: true});
+        view.collection.add(followee);
         view.render();
       }
     });
@@ -59,6 +60,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
       datatype: "json",
       success: function () {
         followee.set({following: false});
+        view.collection.remove(followee);
         view.render();
       }
     });

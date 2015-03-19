@@ -68,13 +68,8 @@ Pixr.Routers.router = Backbone.Router.extend({
   usersIndex: function () {
     var followees = new Pixr.Collections.FollowedUsers();
     followees.fetch();
-    var followers = new Pixr.Collections.Followers();
-    followers.fetch();
 
-    var usersView = new Pixr.Views.UsersIndex({
-      followees: followees,
-      followers: followers
-    });
+    var usersView = new Pixr.Views.UsersIndex({ collection: followees });
     this._swapView(usersView);
 
   },
