@@ -17,5 +17,11 @@ module Api
       render 'index'
     end
 
+    def search
+      @users = User.full_search(params[:query]).first(5)
+      render 'index'
+    end
+
+
   end
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     post '/likes', to: 'likes#toggle'
     get '/users/following', to: 'users#following'
     get '/users/followers', to: 'users#followers'
+    get '/users/search', to: 'users#search'
     get '/users/:id', to: 'users#show'
     resources :follows, only: [:create, :destroy]
     get 'tags/:id', to: 'photos#by_tag'

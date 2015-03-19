@@ -34,6 +34,8 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk', '< 2.0'
 
+gem 'pg_search'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

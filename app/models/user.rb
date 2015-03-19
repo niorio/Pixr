@@ -1,10 +1,16 @@
 class User < ActiveRecord::Base
+  include PgSearch
+
   validates :email, :password_digest, :session_token, :username, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password, confirmation: true
   after_initialize :ensure_session_token
   attr_reader :password
+
+  pg_search_scope :full_search,
+                  against: [:username, :email],
+                  using: { tsearch: { prefix: true } }
 
   has_many :photos, foreign_key: :owner_id, dependent: :destroy
   has_many :albums, foreign_key: :owner_id, dependent: :destroy
