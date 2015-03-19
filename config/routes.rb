@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get '/users/followers', to: 'users#followers'
     get '/users/:id', to: 'users#show'
     resources :follows, only: [:create, :destroy]
+    get 'tags/:id', to: 'photos#by_tag'
   end
 
 end

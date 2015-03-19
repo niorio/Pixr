@@ -12,7 +12,8 @@ Pixr.Routers.router = Backbone.Router.extend({
     'photos/:id': 'show',
     'albums': 'albumIndex',
     'albums/:id': 'albumShow',
-    'users': 'usersIndex'
+    'users': 'usersIndex',
+    'tags/:id': 'photosByTag'
   },
 
   index: function () {
@@ -71,7 +72,15 @@ Pixr.Routers.router = Backbone.Router.extend({
 
     var usersView = new Pixr.Views.UsersIndex({ collection: followees });
     this._swapView(usersView);
+  },
 
+  photosByTag: function (id) {
+    var photos = new Pixr.Collections.PhotosByTag();
+    photos.tag_id = id;
+    photos.fetch();
+
+    var view = new Pixr.Views.PhotosIndex({ collection: photos });
+    this._swapView(view);
   },
 
   _swapView: function (view) {

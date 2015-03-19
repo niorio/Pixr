@@ -24,7 +24,7 @@ module Api
     end
 
     def show
-      @photo = Photo.includes(:comments).find(params[:id])
+      @photo = Photo.includes(:comments, :tags, :owner).find(params[:id])
 
       if @photo.allowed?(current_user)
         render 'show'
@@ -58,6 +58,11 @@ module Api
 
     def followed
       @photos = current_user.followed_photos
+      render 'index'
+    end
+
+    def by_tag
+      @photos = Tag.find(params[:id]).photos
       render 'index'
     end
 

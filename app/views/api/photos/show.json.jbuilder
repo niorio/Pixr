@@ -1,4 +1,4 @@
-json.extract! @photo, :title, :id, :owner_id, :album_id, :created_at, :updated_at, :description
+json.extract! @photo, :title, :id, :album_id, :created_at, :updated_at, :description
 json.url @photo.img.url(:full)
 json.myphoto @photo.owner == current_user
 json.comments @photo.comments do |comment|
@@ -6,7 +6,10 @@ json.comments @photo.comments do |comment|
 end
 json.like_count @photo.like_count
 json.liked @photo.liked_by?(current_user)
-json.tags @photo.taggings do |tagging|
-  json.name tagging.tag.name
-  json.id tagging.tag.id
+json.tags @photo.tags do |tag|
+  json.name tag.name
+  json.id tag.id
+end
+json.owner do
+  json.partial! 'api/users/user', user: @photo.owner
 end

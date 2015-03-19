@@ -18,6 +18,7 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    console.log(this.model);
     var content = this.template({ photo: this.model });
     this.$el.html(content);
 
@@ -30,6 +31,11 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
     this.model.comments().each(function(comment){
       commentView = new Pixr.Views.CommentShow({ model: comment });
       that.addSubview('.comments', commentView);
+    })
+
+    this.model.tags().each(function(tag){
+      tagView = new Pixr.Views.Tag({ model: tag });
+      that.addSubview('.tags-list', tagView);
     })
 
     return this;
