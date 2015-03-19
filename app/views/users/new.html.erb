@@ -5,7 +5,7 @@
     <% if @user.errors %>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="error"><%= msg %></li>
       <% end %>
       </ul>
     <% end %>
@@ -14,9 +14,11 @@
     <form action="<%= users_url %>" method="post">
       <%= csrf_token %>
 
-        <input class="login-input" type="text" name="user[email]" value="<%= @user.email %>" placeholder="username">
-        <input class="login-input" type="text" name="user[username]" value="<%= @user.username %>" placeholder="email">
-        <input class="login-input" type="password" name="user[password]" placeholder="password">
+      <input class="login-input" type="text" name="user[username]" value="<%= @user.username %>" placeholder="username">
+      <input class="login-input" type="text" name="user[email]" value="<%= @user.email %>" placeholder="email">
+      <input class="login-input" type="password" name="user[password]" placeholder="password">
+      <input class="login-input" type="password" name="user[password_confirmation]" placeholder="confirm password">
+
 
       <button class="login-button">Submit</button>
     </form>

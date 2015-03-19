@@ -30,4 +30,12 @@ module ApplicationHelper
     HTML
   end
 
+  def home_url
+    if signed_in?
+      return '#'
+    else
+      return root_url
+    end
+  end
+
 end

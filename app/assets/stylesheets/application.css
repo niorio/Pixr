@@ -38,3 +38,9 @@ body {
 .hidden{
   display: none;
 }
+
+.error{
+  display: block;
+  list-style: none;
+  color: red;
+}
