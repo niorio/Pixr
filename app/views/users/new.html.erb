@@ -1,28 +1,24 @@
-<div class="splash">
-  <h1>New User</h1>
+<div class="splash2">
+  <section class="login-form">
+    <h1 class="new-user-h1">New User</h1>
 
-  <% if @user.errors %>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% if @user.errors %>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
 
 
-  <form action="<%= users_url %>" method="post">
-    <%= csrf_token %>
+    <form action="<%= users_url %>" method="post">
+      <%= csrf_token %>
 
-    <label>Email:
-      <input type="text" name="user[email]" value="<%= @user.email %>">
-    </label>
-    <label>Username:
-      <input type="text" name="user[username]" value="<%= @user.username %>">
-    </label>
-    <label>Password:
-      <input type="password" name="user[password]">
-    </label>
+        <input class="login-input" type="text" name="user[email]" value="<%= @user.email %>" placeholder="username">
+        <input class="login-input" type="text" name="user[username]" value="<%= @user.username %>" placeholder="email">
+        <input class="login-input" type="password" name="user[password]" placeholder="password">
 
-    <button>Submit</button>
-  </form>
+      <button class="login-button">Submit</button>
+    </form>
+  </section>
 <div>
