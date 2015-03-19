@@ -15,7 +15,7 @@
  *= require justifiedGallery.min
  */
 
-html, body, a, h1, h2, section, ul, li, div {
+html, body, a, h1, h2, h3, section, ul, li, div {
   margin: 0;
   padding: 0;
   border: 0;

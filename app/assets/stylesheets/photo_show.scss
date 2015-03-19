@@ -73,5 +73,40 @@
   position: absolute;
   left: 50%;
   float: left;
+}
 
+.comment-column{
+  float: left;
+  width: 450px;
+}
+
+.details-column{
+  float: right;
+  width: 450px;
+}
+
+.tags-list{
+  list-style: none;
+  float: right;
+  padding: 20px;
+}
+
+.tags-list a{
+  display: block;
+  background-color: #858585;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.tags-list a:hover{
+  background-color: #ccc;
+}
+
+
+.tags-list h3{
+  display: block;
+  margin-bottom: 10px auto;
+  font-size: 18px;
 }

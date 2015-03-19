@@ -62,7 +62,7 @@ module Api
     end
 
     def by_tag
-      @photos = Tag.find(params[:id]).photos
+      @photos = Tag.find(params[:id]).public_photos
       render 'index'
     end
 
