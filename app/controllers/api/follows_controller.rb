@@ -15,7 +15,7 @@ module Api
 
     def destroy
 
-      follow = current_user.out_follows.where(followee_id: params[:followee_id])
+      follow = current_user.out_follows.find_by(followee_id: params[:id])
       follow.destroy
       render json: {}
 

@@ -3,18 +3,18 @@ module Api
 
     def show
       @user = User.find(params[:id])
-      render json: @user
+      render 'show'
 
     end
 
     def following
-      @following = current_user.followees
-      render json: @following
+      @users = current_user.followees
+      render 'index'
     end
 
     def followers
-      @followers = current_user.followers
-      render json: @followers
+      @users = current_user.followers
+      render 'index'
     end
 
   end

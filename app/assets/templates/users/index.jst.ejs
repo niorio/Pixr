@@ -1,21 +1,13 @@
 <section class="users-lists">
   <section class="following">
   <h1>Following</h1>
-  <ul>
-    <% followees.each(function(followee){ %>
-      <li><%= followee.escape('username') %></li>
-    <% }); %>
+  <ul class="following-list">
   </ul>
   </section>
 
   <section class="followers">
-    <h1>Following</h1>
-    <ul>
-      <% followers.each(function(follower){ %>
-        <li><%= follower.escape('username') %>
-          <button class="follow"></button>
-        </li>
-      <% }); %>
+    <h1>Followers</h1>
+    <ul class="followers-list">
     </ul>
   </section>
 </section>

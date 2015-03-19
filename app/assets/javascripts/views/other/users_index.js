@@ -1,18 +1,31 @@
-Pixr.Views.UsersIndex = Backbone.View.extend({
+Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
 
   initialize: function(options){
     this.followers = options.followers;
     this.followees = options.followees;
-    this.listenTo(this.followees, 'sync', this.render);
-    this.listenTo(this.followers, 'sync', this.render);
+    this.listenTo(this.followees, 'sync change', this.render);
+    this.listenTo(this.followers, 'sync change', this.render);
 
   },
 
   template: JST['users/index'],
 
   render: function(){
-    content = this.template({followees: this.followees, followers: this.followers});
+    content = this.template();
     this.$el.html(content);
+    var view = this;
+    var userView;
+
+    this.followers.each( function(follower) {
+      userView = new Pixr.Views.UserCard({ model: follower })
+      view.addSubview('.followers-list', userView)
+    });
+
+    this.followees.each( function(follower) {
+      userView = new Pixr.Views.UserCard({ model: follower })
+      view.addSubview('.following-list', userView)
+    });
+
     return this;
 
   }
