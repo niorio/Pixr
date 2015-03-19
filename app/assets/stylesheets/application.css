@@ -15,7 +15,7 @@
  *= require justifiedGallery.min
  */
 
-html, body, a, h1, h2, h3, section, ul, li, div {
+html, body, a, h1, h2, h3, section, ul, li, div, button, input, textarea {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,7 +24,7 @@ html, body, a, h1, h2, h3, section, ul, li, div {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
   background-color: #eee;
 }

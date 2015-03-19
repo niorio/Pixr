@@ -5,13 +5,13 @@
     <section class="photo-info">
       <h1 class="photo-title"><%= photo.escape('title') %>
       <% if (photo.get('myphoto')) { %>
-        <button class="edit-title">edit</button>
+        <button class="edit-title"></button>
       <% } %>
       </h1>
 
       <section class="photo-description"><%= photo.escape('description') %>
       <% if (photo.get('myphoto')) { %>
-        <button class="edit-description">edit</button>
+        <button class="edit-description"></button>
       <% } %>
       </section>
     </section>
@@ -32,7 +32,7 @@
     </ul>
 
     <form class="comment-form">
-      <textarea name="body" rows="8" cols="40"></textarea>
+      <textarea name="body" rows="8" cols="40" placeholder="add a comment"></textarea>
       <button>Leave Comment</button>
     </form>
   </section>

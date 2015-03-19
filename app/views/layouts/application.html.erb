@@ -8,19 +8,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="header group">
-  <nav class="header-nav">
-    <h1 class="header-logo"><a href="#">
-      <%= logo %>
-      pixr</a></h1>
+<header class="fixed-header">
+  <header class="header group">
+    <nav class="header-nav">
+      <h1 class="header-logo"><a href="#">
+        <%= logo %>
+        pixr</a></h1>
 
-    <div class="header-buttons">
-      <% if signed_in? %>
-        <label class="username"><%= current_user.username %></label>
-        <%= signout_button %>
-      <% end %>
-    </div>
-  </nav>
+      <div class="header-buttons">
+        <% if signed_in? %>
+          <label class="username"><%= current_user.username %></label>
+          <%= signout_button %>
+        <% end %>
+      </div>
+    </nav>
+  </header>
+
+  <% if signed_in? %>
+    <header class="sub-header group">
+      <nav class="sub-header-nav">
+        <a href="#">Photos</a>
+        <a href="#/albums">Albums</a>
+        <a href="#/photos/liked">Favorites</a>
+        <a href="#/photos/followed">Shared</a>
+        <a href="#/users">Users</a>
+        <a href="#/photos/new">Upload</a>
+      </nav>
+    </header>
+  <% end %>
 </header>
 
 <%= yield %>

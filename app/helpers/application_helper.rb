@@ -19,13 +19,12 @@ module ApplicationHelper
   end
 
   def logo
-    return nil
     <<-HTML.html_safe
       <svg version="1.1"
            baseProfile="full"
-           width="40" height="40"
+           width="30" height="30"
            xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="15" fill="#00ffff" />
+        <circle cx="15" cy="15" r="15" fill="#00ffff" />
       </svg>
 
     HTML
