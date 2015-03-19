@@ -7,9 +7,9 @@ class Photo < ActiveRecord::Base
 
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
   belongs_to :album
-  has_many :comments
-  has_many :likes
-  has_many :taggings
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   scope :sharable, -> { where(private: false) }

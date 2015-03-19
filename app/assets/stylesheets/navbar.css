@@ -22,16 +22,11 @@
   padding: 10px;
   display: block;
   text-decoration: none;
-  font-family: sans-serif;
   font-size: 30px;
 }
 
 .header-buttons{
   float: right;
-}
-
-.username {
-  font-family: sans-serif;
 }
 
 .username{
@@ -59,7 +54,6 @@
 .sub-header-nav a {
   display: block;
   text-decoration: none;
-  font-family: sans-serif;
   padding: 4px 25px;
   float: left;
 }
