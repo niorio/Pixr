@@ -1,17 +1,26 @@
 .photo-form{
   display:block;
   width: 900px;
-  padding: 50px;
-  margin: 10px auto;
-  border-radius: 10px;
+  margin: 0 auto;
 }
 
-.photo-form * {
-  display: block;
-  margin: 20px auto;
+.preview-pane{
+  width: 450px;
+  box-sizing: border-box;
+  float: left;
+}
+.inputs{
+  width: 450px;
+  box-sizing: border-box;
+  float: right;
+  padding: 20px;
 }
 
-.photo-form > textarea{
+.inputs > *{
+  margin: 10px 0;
+}
+
+#description{
   width: 250px;
   height: 100px;
   border: 1px solid #ccc;
@@ -20,7 +29,7 @@
 }
 
 
-.photo-form > #title{
+#title{
   display: block;
   width: 180px;
   border: 1px solid #ccc;
@@ -30,12 +39,13 @@
   padding: 5px;
 }
 
-#title:focus, #description:focus, .photo-form > #tags:focus{
+#title:focus, #description:focus, #tags:focus{
   outline: none;
   border: 1px solid #008ddf;
 }
 
-.photo-form > #album, #privacy{
+#album, #privacy{
+  display: block;
   font-size: 16px;
   padding: 5px;
   border: 1px solid #ccc;
@@ -44,14 +54,14 @@
   background: white;
 }
 
-.photo-form > #tags{
+#tags{
   width: 250px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;
 }
 
-.photo-form > button{
+.photo-form button{
   outline: none;
   display: block;
   background-color: #008ddf;
@@ -65,4 +75,25 @@
 
 .photo-form button:hover{
   background-color: #009efa;
+}
+
+#preview{
+  width: 300px;
+  display: block;
+  margin: 40px auto;
+}
+
+.empty{
+  display: block;
+  background-color: white;
+  border: 4px dashed black;
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+}
+
+.upload-spinner{
+  width: 34px;
+  height: 34px;
+  background-image: image_url('spinner.gif')
 }

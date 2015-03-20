@@ -64,7 +64,7 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
   },
 
   previewImg: function (src) {
-    this.$('#preview').removeClass('hidden').attr('src', src);
+    this.$('#preview').removeClass('empty').attr('src', src);
   },
 
   newAlbum: function(event) {

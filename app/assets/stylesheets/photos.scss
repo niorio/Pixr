@@ -2,10 +2,6 @@
   display:block;
 }
 
-#preview{
-  width: 100px;
-}
-
 .photo-details{
   display: block;
   position: absolute;
@@ -30,10 +26,4 @@
 
 .photos a{
   position: relative;
-}
-
-.upload-spinner{
-  width: 34px;
-  height: 34px;
-  background-image: image_url('spinner.gif')
 }

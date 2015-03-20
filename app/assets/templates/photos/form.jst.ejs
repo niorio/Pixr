@@ -1,36 +1,40 @@
-<% if (errors) { %>
-	<ul class="errors">
-	<% _.each(errors, function(error){ %>
-		<li class="error"> <%= error %> </li>
-	<% }); %>
-	<ul>
-<% } %>
+<div class="preview-pane">
+		<img src="" id="preview" class="empty">
+</div>
+
+<div class="inputs">
+	<% if (errors) { %>
+		<ul class="errors">
+		<% _.each(errors, function(error){ %>
+			<li class="error"> <%= error %> </li>
+		<% }); %>
+		<ul>
+	<% } %>
 
 
-<input id="title" type="text" name="title" value="<%= photo.escape('title') %>" placeholder="title">
+	<input id="title" type="text" name="title" value="<%= photo.escape('title') %>" placeholder="title">
 
-<input type="file" name="img" id="input-img-file">
+	<input type="file" name="img" id="input-img-file">
 
-<textarea id="description" name="description" rows="8" cols="40" placeholder="description"></textarea>
+	<textarea id="description" name="description" rows="8" cols="40" placeholder="description"></textarea>
 
 
-<select name="album_id" id="album">
-	<option value="">album</option>
-	<% albums.each(function(album){ %>
-		<option value="<%= album.id %>"><%= album.escape('title') %></option>
-	<% }); %>
-	<option value="new-album">New Album</option>
-</select>
+	<select name="album_id" id="album">
+		<option value="">album</option>
+		<% albums.each(function(album){ %>
+			<option value="<%= album.id %>"><%= album.escape('title') %></option>
+		<% }); %>
+		<option value="new-album">New Album</option>
+	</select>
 
-<input id="tags" type="text" name="tags" value="<%= photo.escape('tags') %>"
-	placeholder="Tags: separated by commas">
+	<input id="tags" type="text" name="tags" value="<%= photo.escape('tags') %>"
+		placeholder="Tags: separated by commas">
 
-<select name="private" id="privacy">
-	<option value="false">Share With Followers</option>
-	<option value="true">Keep Private</option>
-</select>
+	<select name="private" id="privacy">
+		<option value="false">Share With Followers</option>
+		<option value="true">Keep Private</option>
+	</select>
 
-<button>Submit</button>
-
-<img src="" id="preview" class="hidden">
-<div class="upload-spinner hidden"></div>
+	<button>Submit</button>
+	<div class="upload-spinner hidden"></div>
+</div>
