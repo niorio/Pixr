@@ -23,12 +23,8 @@ Pixr.Collections.Photos = Backbone.Collection.extend({
     return photo;
   },
 
-  comparator: function(model1, model2){
-    if ((model1.id) < (model2.id)){
-      return 1;
-    } else {
-      return 0;
-    }
+  comparator: function(model){
+    return -model.get('id');
   }
 
 });
