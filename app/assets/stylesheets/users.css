@@ -4,11 +4,14 @@
 }
 
 .following{
-  width: 450px;
+  width: 400px;
+  margin: 25px;
   display: block;
   float: left;
   padding: 20px;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  min-height: 500px;
 }
 
 .following h1{
@@ -16,11 +19,14 @@
 }
 
 .users-search{
-  width: 450px;
+  width: 400px;
+  margin: 25px;
+  border: 1px solid #ccc;
   display: block;
   float: right;
   padding: 20px;
   box-sizing: border-box;
+  min-height: 500px;
 }
 
 .user-card{

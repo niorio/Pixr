@@ -7,39 +7,28 @@
 <% } %>
 
 
-<label>Title:
-	<input type="text" name="title" value="<%= photo.escape('title') %>">
-</label>
-<br>
-<label>Photo:
-	<input type="file" name="img" id="input-img-file">
-</label>
-<br>
-<label>Description:
-	<textarea name="description" rows="8" cols="40"></textarea>
-</label>
-<br>
-<label>Album:
-	<select name="album_id">
-		<option value="">none</option>
-		<% albums.each(function(album){ %>
-			<option value="<%= album.id %>"><%= album.escape('title') %></option>
-		<% }); %>
-		<option value="new-album">New Album</option>
-	</select>
-</label>
-<br>
-<label>Tags:
-	<input type="text" name="tags" value="<%= photo.escape('tags') %>"
-		placeholder="separated by commas">
-</label>
-<br>
+<input id="title" type="text" name="title" value="<%= photo.escape('title') %>" placeholder="title">
 
-<select name="private">
+<input type="file" name="img" id="input-img-file">
+
+<textarea id="description" name="description" rows="8" cols="40" placeholder="description"></textarea>
+
+
+<select name="album_id" id="album">
+	<option value="">album</option>
+	<% albums.each(function(album){ %>
+		<option value="<%= album.id %>"><%= album.escape('title') %></option>
+	<% }); %>
+	<option value="new-album">New Album</option>
+</select>
+
+<input id="tags" type="text" name="tags" value="<%= photo.escape('tags') %>"
+	placeholder="Tags: separated by commas">
+
+<select name="private" id="privacy">
 	<option value="false">Share With Followers</option>
 	<option value="true">Keep Private</option>
 </select>
-<br>
 
 <button>Submit</button>
 

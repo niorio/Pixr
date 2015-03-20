@@ -1,0 +1,68 @@
+.photo-form{
+  display:block;
+  width: 900px;
+  padding: 50px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.photo-form * {
+  display: block;
+  margin: 20px auto;
+}
+
+.photo-form > textarea{
+  width: 250px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+
+.photo-form > #title{
+  display: block;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#title:focus, #description:focus, .photo-form > #tags:focus{
+  outline: none;
+  border: 1px solid #008ddf;
+}
+
+.photo-form > #album, #privacy{
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background: white;
+}
+
+.photo-form > #tags{
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.photo-form > button{
+  outline: none;
+  display: block;
+  background-color: #008ddf;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 42px;
+}
+
+.photo-form button:hover{
+  background-color: #009efa;
+}
