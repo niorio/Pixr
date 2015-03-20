@@ -39,7 +39,7 @@
   padding: 5px;
 }
 
-#title:focus, #description:focus, #tags:focus{
+#title:focus, #description:focus, #tags:focus, .new-album:focus{
   outline: none;
   border: 1px solid #008ddf;
 }
@@ -56,6 +56,12 @@
 
 #tags{
   width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.new-album{
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px;

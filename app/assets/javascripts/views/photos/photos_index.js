@@ -2,7 +2,7 @@ Pixr.Views.PhotosIndex = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync add', this.render);
+    this.listenTo(this.collection, 'add', this.render);
   },
 
   render: function () {

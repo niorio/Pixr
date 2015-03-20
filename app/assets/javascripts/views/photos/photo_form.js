@@ -73,7 +73,7 @@ Pixr.Views.PhotoForm = Backbone.View.extend({
     if ($albumSelect.val() !== "new-album"){
       return;
     }
-    $albumInput = $('<input type="text" name="new_album_name">');
+    $albumInput = $('<input type="text" name="new_album_name" class="new-album" placeholder="album name">');
     $albumSelect.replaceWith($albumInput);
 
   }
