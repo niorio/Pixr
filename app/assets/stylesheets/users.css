@@ -12,6 +12,7 @@
   box-sizing: border-box;
   border: 1px solid #ccc;
   min-height: 500px;
+  border-radius: 4px;
 }
 
 .following h1{
@@ -27,6 +28,8 @@
   padding: 20px;
   box-sizing: border-box;
   min-height: 500px;
+  border-radius: 4px;
+  
 }
 
 .user-card{
