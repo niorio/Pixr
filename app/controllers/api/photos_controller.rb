@@ -66,6 +66,11 @@ module Api
       render 'index'
     end
 
+    def search
+      @photos = Photos.full_search(params[:query])
+      render 'index'
+    end
+
     private
     def photo_params
       params.require(:photo).permit(:title, :description, :img, :album_id, :private)

@@ -1,4 +1,6 @@
 class Photo < ActiveRecord::Base
+  include PgSearch
+
   validates :owner_id, :title, presence: true
 
   has_attached_file :img, styles: { thumb: "400x325", full: "900x700"}
@@ -11,6 +13,11 @@ class Photo < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+
+  pg_search_scope :full_search,
+                  against: [:title, :description],
+                  associated_against: { tags: :name, owner: :username, album: :title},
+                  using: { tsearch: { prefix: true } }
 
   scope :sharable, -> { where(private: false) }
 
