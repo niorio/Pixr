@@ -1,6 +1,6 @@
 Pixr.Views.UserCard = Backbone.View.extend({
 
-  className: 'user-card',
+  className: 'user-card group',
 
   intitialize: function () {
     this.listenTo(this.model, 'sync', this.render)
@@ -12,7 +12,6 @@ Pixr.Views.UserCard = Backbone.View.extend({
   },
 
   render: function () {
-    console.log("hey")
     this.$el.empty();
 
     var name = $('<h3>').text(this.model.escape('username'));

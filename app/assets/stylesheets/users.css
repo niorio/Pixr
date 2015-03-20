@@ -1,0 +1,65 @@
+.users{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.following{
+  width: 450px;
+  display: block;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.following h1{
+  font-size: 20px;
+}
+
+.users-search{
+  width: 450px;
+  display: block;
+  float: right;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.user-card{
+  margin: 10px 0;
+}
+
+.user-card > *{
+  float: left;
+}
+
+.user-card h3{
+  padding-top: 3px;
+}
+
+.follow, .unfollow{
+  padding: 3px 5px;
+  margin-left: 20px;
+  outline: none;
+  background-color: #008ddf;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+.follow:hover, .unfollow:hover{
+  background-color: #009efa;
+}
+
+.searchbox{
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.searchbox:focus{
+  outline: none;
+  border: 1px solid #008ddf;
+}

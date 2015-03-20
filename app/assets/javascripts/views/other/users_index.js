@@ -7,10 +7,12 @@ Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
 
   },
 
+  className: "users group",
+
   template: JST['users/index'],
 
   events: {
-    'keypress .searchbox': 'search'
+    'keyup .searchbox': 'search'
   },
 
   render: function(){
@@ -41,6 +43,8 @@ Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
   showresults: function () {
     var view = this;
     var userView;
+
+    view.removeSubviews('.search-results');
 
     this.searchResults.each( function(user) {
       userView = new Pixr.Views.UserCard({ model: user, collection: view.collection })
