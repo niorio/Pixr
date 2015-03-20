@@ -17,3 +17,5 @@ Pixr.Collections.UserSearchResults = Backbone.Collection.extend({
 
   url: 'api/users/search'
 })
+
+Pixr.Collections.followees = new Pixr.Collections.FollowedUsers();

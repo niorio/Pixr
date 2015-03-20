@@ -4,6 +4,8 @@ Pixr.Views.Like = Backbone.View.extend({
     'click': 'toggleLike'
   },
 
+  className: "like group",
+
   render: function () {
     var $icon
     if (this.model.get('liked')){

@@ -25,7 +25,10 @@ Pixr.Views.UserCard = Backbone.View.extend({
     }
 
     this.$el.append(name);
-    this.$el.append(button);
+
+    if (!this.model.get("me")){
+      this.$el.append(button);
+    }
 
     return this;
   },
@@ -34,6 +37,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
   follow: function (){
     var followee = this.model;
     var view = this;
+    var collection = Pixr.Collections.followees;
 
     $.ajax({
       url:'api/follows',
@@ -42,7 +46,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
       data: {followee_id: followee.id},
       success: function () {
         followee.set({following: true});
-        view.collection.add(followee);
+        collection.add(followee);
         view.render();
       }
     });
@@ -52,6 +56,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
   unfollow: function (){
     var followee = this.model;
     var view = this;
+    var collection = Pixr.Collections.followees;
 
     $.ajax({
       url:'api/follows/' + followee.id,
@@ -59,7 +64,7 @@ Pixr.Views.UserCard = Backbone.View.extend({
       datatype: "json",
       success: function () {
         followee.set({following: false});
-        view.collection.remove(followee);
+        collection.remove(followee);
         view.render();
       }
     });

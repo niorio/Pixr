@@ -134,3 +134,13 @@
   border: 1px solid #008ddf;
   color: black;
 }
+
+.user-info{
+  float: right;
+}
+
+.user-info > .user-card:before{
+  content:"";
+  display: block;
+  clear: both;
+}

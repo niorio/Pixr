@@ -15,7 +15,7 @@ class Photo < ActiveRecord::Base
   scope :sharable, -> { where(private: false) }
 
   def allowed?(user)
-    if owner === user || (user.follows?(owner) && !(self.private))
+    if owner === user || !self.private
       return true
     else
       return false

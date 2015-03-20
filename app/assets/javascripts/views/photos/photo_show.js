@@ -21,8 +21,11 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
     var content = this.template({ photo: this.model });
     this.$el.html(content);
 
-    likeview = new Pixr.Views.Like({ model: this.model });
-    this.addSubview('.like', likeview);
+    var likeview = new Pixr.Views.Like({ model: this.model });
+    this.addSubview('.user-info', likeview);
+
+    var userview = new Pixr.Views.UserCard({ model: this.model.owner() });
+    this.addSubview('.user-info', userview)
 
     var that = this;
     var commentView;

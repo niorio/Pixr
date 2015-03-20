@@ -22,7 +22,7 @@ Pixr.Views.UsersIndex = Backbone.CompositeView.extend({
     var userView;
 
     this.collection.each( function(follower) {
-      userView = new Pixr.Views.UserCard({ model: follower, collection: view.collection })
+      userView = new Pixr.Views.UserCard({ model: follower })
       view.addSubview('.following-list', userView)
     });
 
