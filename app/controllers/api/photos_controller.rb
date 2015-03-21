@@ -17,7 +17,7 @@ module Api
       @photo.parse_tags(params[:photo][:tags])
 
       if @photo.save
-        render json: @photo
+        render 'show'
       else
         render json: @photo.errors.full_messages, status: :unprocessable_entity
       end

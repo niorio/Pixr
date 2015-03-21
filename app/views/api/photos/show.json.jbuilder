@@ -13,3 +13,4 @@ end
 json.owner do
   json.partial! 'api/users/user', user: @photo.owner
 end
+json.thumb_url @photo.img.url(:thumb)
