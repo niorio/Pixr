@@ -1,7 +1,7 @@
 Pixr.Views.AlbumShow = Backbone.View.extend({
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.model, 'add', this.render)
   },
 
   className: 'album-show',

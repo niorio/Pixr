@@ -6,7 +6,7 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
 
   events: {
     'submit .comment-form': "submitComment",
-    'click .delete-photo': 'destroyPhoto',
+    'click .delete-photo': 'confirmDelete',
     'click .edit-title': 'editTitle',
     'blur .title-form': 'updateTitle',
     'click .edit-description': 'editDescription',
@@ -61,8 +61,18 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
     });
   },
 
-  destroyPhoto: function(event) {
+  confirmDelete: function(event){
     event.preventDefault();
+    confirm = new Backbone.ModalView({
+      callback: this.destroyPhoto.bind(this),
+      message: "Are you sure you want to delete this photo?"
+    });
+
+    this.$el.append(confirm.render().$el);
+
+  },
+
+  destroyPhoto: function() {
     this.model.destroy({
       success: function () {
         Backbone.history.navigate("", {trigger: true});
