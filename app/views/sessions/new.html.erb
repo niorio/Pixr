@@ -3,18 +3,32 @@
     <h1>Log In</h1>
     <%= flash.now[:errors] %>
 
-    <form action="<%= session_url %>" method="post">
+    <form id="login" action="<%= session_url %>" method="post">
       <%= csrf_token %>
 
       <input class="login-input" type="text" name="user[username]"
-          value="<%= @user.username %>" placeholder="Username">
+          value="<%= @user.username %>" placeholder="Username" id="name">
       <input class="login-input" type="password" name="user[password]"
-          placeholder="Password">
+          placeholder="Password" id="password">
 
       <button class="login-button">Sign In</button>
 
     	<a href="<%= new_user_url %>" class="new-user">Create Account</a>
 
+      <button id="guest" class="login-button">Sign In as Guest</button>
+
     </form>
   </section>
 </div>
+
+<script>
+  $(function() {
+    $('#guest').on('click', function (event){
+      event.preventDefault();
+      $('#name').val('guest');
+      $('#password').val('password');
+      $('#login').submit();
+    });
+  });
+
+</script>
