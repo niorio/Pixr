@@ -3,7 +3,7 @@ Pixr.Views.AlbumsIndex = Backbone.View.extend({
   template: JST['albums/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'add', this.render)
   },
 
   render: function () {
@@ -13,7 +13,8 @@ Pixr.Views.AlbumsIndex = Backbone.View.extend({
     this.$('.album-list').justifiedGallery({
       rowHeight: 250,
       lastRow: 'nojustify',
-      margins: 25
+      margins: 25,
+      imagesAnimationDuration: 0
     });
 
 
