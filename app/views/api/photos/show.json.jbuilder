@@ -4,7 +4,7 @@ json.myphoto @photo.owner == current_user
 json.comments @photo.comments do |comment|
   json.partial! 'api/comments/comment', comment: comment
 end
-json.like_count @photo.like_count
+json.like_count @photo.likes_count
 json.liked @photo.liked_by?(current_user)
 json.tags @photo.tags do |tag|
   json.name tag.name

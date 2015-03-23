@@ -4,6 +4,7 @@
   width: 450px;
   padding: 30px;
   margin: 90px auto;
+  border-radius: 4px;
 }
 
 .login-form h1{
@@ -23,11 +24,12 @@
   margin: 10px auto;
   border: 1px solid #ccc;
   padding: 5px;
+  border-radius: 4px;
 }
 
 .login-input:focus{
   outline:none;
-  border: 1px solid #70B8FF;
+  border: 1px solid #008ddf;
 }
 
 .login-button, .new-user{
@@ -43,6 +45,7 @@
   border: none;
   padding: 10px 5px;
   box-sizing: content-box;
+  border-radius: 4px;
 }
 
 .login-button:active, .new-user:active{

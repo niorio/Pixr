@@ -1,8 +1,8 @@
 # Pixr
 
-[Heroku link][heroku]
+[Live Site][live]
 
-[heroku]: https://pixr-photos.herokuapp.com/
+[live]: https://www.pixr.pics/
 
 ## Minimum Viable Product
 Pixr is a clone of Flickr built on Rails and Backbone. Users can:

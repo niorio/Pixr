@@ -33,11 +33,6 @@ class Photo < ActiveRecord::Base
     self.likes.where(user: user).exists?
   end
 
-  def like_count
-    self.likes.count
-  end
-
-
   def parse_tags(string)
     tagnames = string.split(",").map(&:strip)
     _tags = tagnames.map do |tagname|
