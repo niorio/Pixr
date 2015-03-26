@@ -2,7 +2,7 @@ module Api
   class PhotosController < ApiController
 
     def index
-      @photos = Photo.includes(:likes).where(owner: current_user)
+      @photos = current_user.photos
       render 'index'
     end
 

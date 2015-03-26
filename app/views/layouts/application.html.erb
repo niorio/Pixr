@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="fixed-header">
-  <header class="header group">
+  <div class="header group">
     <nav class="header-nav">
       <h1 class="header-logo"><a href="<%= home_url %>">
         <%= logo %>
@@ -23,10 +23,10 @@
         <% end %>
       </div>
     </nav>
-  </header>
+  </div>
 
   <% if signed_in? %>
-    <header class="sub-header group">
+    <div class="sub-header group">
       <nav class="sub-header-nav">
         <a href="#">Photos</a>
         <a href="#/albums">Albums</a>
@@ -35,7 +35,7 @@
         <a href="#/users">Users</a>
         <a href="#/photos/new">Upload</a>
       </nav>
-    </header>
+    </div>
   <% end %>
 </header>
 
