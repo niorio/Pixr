@@ -63,12 +63,12 @@ Pixr.Views.PhotoShow = Backbone.CompositeView.extend({
 
   confirmDelete: function(event){
     event.preventDefault();
-    confirm = new Backbone.ModalView({
+    var modal = new Backbone.ModalView({
       callback: this.destroyPhoto.bind(this),
       message: "Are you sure you want to delete this photo?"
     });
 
-    this.$el.append(confirm.render().$el);
+    this.addSubview('.extras', modal);
 
   },
 

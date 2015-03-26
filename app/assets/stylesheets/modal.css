@@ -1,8 +1,42 @@
 .shroud{
   background-color: rgba(0,0,0,.6);
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
+.modal-box{
+  z-index: 3;
+  position: fixed;
+  top: 30%;
+  left: 33%;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.confirm, .cancel{
+  padding: 3px 5px;
+  margin-right: 15px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.confirm{
+  background-color: #d9534f;
+}
+
+.confirm:hover{
+  background-color: #AA322E;
+}
+
+.cancel{
+  background-color: #eee;
+}
+
+.cancel:hover{
+  background-color: #ccc;
 }

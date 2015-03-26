@@ -6,8 +6,7 @@ Backbone.ModalView = Backbone.View.extend({
 
   events: {
     'click .confirm': 'confirm',
-    'click .cancel': 'remove',
-    'click .shroud': 'doNothing'
+    'click .cancel': 'remove'
   },
 
   classname: "modal",
@@ -22,7 +21,6 @@ Backbone.ModalView = Backbone.View.extend({
 
   confirm: function (){
     this.callback();
-    this.remove();
   },
 
   doNothing: function(event){
