@@ -2,9 +2,7 @@
 
 [Live Site][live]
 
-[live]: https://www.pixr.pics/
-
-Pixr is a Flickr-style photo-sharing site built on Rails and Backbone.
+Pixr is a Flickr-style photo-sharing site built in Rails and Backbone.
 
 ##Features
 - Users can upload photos and create albums.
@@ -17,14 +15,16 @@ Pixr is a Flickr-style photo-sharing site built on Rails and Backbone.
 - Custom authentication using BCrypt
 - After login, front-end is done entirely with Backbone.js, consuming JSON from the Rails API.
 - Photo storage implemented with [Paperclip][paperclip] and Amazon S3
-[paperclip]: https://github.com/thoughtbot/paperclip
 - A count of likes is stored using Rails cache_counter to cut down on queries
 - get request for individual photo includes comments and author information
 - Justified photo grid done with the [Justified Gallery][JG] plugin
-[JG]: https://github.com/miromannino/Justified-Gallery
 
 ##TODO
 - drag and drop upload
 - photo search across entire site
 - OmniAuth for Twitter
 - draggable album reordering
+
+[live]: https://www.pixr.pics/
+[paperclip]: https://github.com/thoughtbot/paperclip
+[JG]: https://github.com/miromannino/Justified-Gallery
