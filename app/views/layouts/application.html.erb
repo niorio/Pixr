@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
+  <%= google_tracker %>
 </head>
 <body>
 <header class="fixed-header">
@@ -41,6 +42,5 @@
 
 <%= yield %>
 
-<%= google_tracker %>
 </body>
 </html>
