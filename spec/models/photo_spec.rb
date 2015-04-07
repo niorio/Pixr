@@ -17,5 +17,12 @@ RSpec.describe Photo, :type => :model do
     expect(photo.owner.username).to eq('test')
   end
 
+  it 'has an attached image' do
+    photo = @user.photos.create(title: "test")
+    expect(photo.valid?).to be false
+    photo2 = @user.photos.create(title: "test2",
+      img: File.new(Rails.root + 'spec/fixtures/images/test_image.jpg'))
+    expect(photo2.valid?).to be true
+  end
 
 end
