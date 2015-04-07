@@ -18,7 +18,8 @@ RSpec.describe Album, :type => :model do
 
   it 'has many photos' do
     album = @user.albums.create(title:'party')
-    photo = @user.photos.new(title:"party pic 1", album: album)
+    photo = @user.photos.create(title:"party pic 1", album: album,
+      img: File.new(Rails.root + 'spec/fixtures/images/test_image.jpg'))
     expect(album.photos.first).to eq(photo)
     expect(photo.album).to eq(album)
   end
