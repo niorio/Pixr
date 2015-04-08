@@ -21,4 +21,6 @@ Rails.application.routes.draw do
     get 'tags/:id', to: 'photos#by_tag'
   end
 
+  get "/auth/:provider/callback", to: "sessions#omniauth"
+
 end
