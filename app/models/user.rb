@@ -36,8 +36,8 @@ class User < ActiveRecord::Base
             uid: auth_hash[:uid])
 
     unless user
-      user = User.create!(
-            username: auth_hash[:info][:nickname]
+      user = User.new(
+            username: auth_hash[:info][:nickname],
             provider: auth_hash[:provider],
             uid: auth_hash[:uid],
             password: SecureRandom::urlsafe_base64)
