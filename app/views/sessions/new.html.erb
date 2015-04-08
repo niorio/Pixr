@@ -1,7 +1,9 @@
 <div class="splash">
   <h1>the place for your photos</h1>
   <section class="login-form">
-    <%= flash.now[:errors] %>
+    <% if flash.now[:errors] %>
+      <p class="error"><%= flash.now[:errors] %></p>
+    <% end %>
 
     <form id="login" action="<%= session_url %>" method="post">
       <%= csrf_token %>

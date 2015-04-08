@@ -48,5 +48,10 @@ body {
 .error{
   display: block;
   list-style: none;
-  color: red;
+  color: #D8000C;
+  border: 1px solid #D8000C;
+  background-color: #FFBABA;
+  padding: 3px;
+  border-radius: 4px;
+  margin: 5px 0;
 }
