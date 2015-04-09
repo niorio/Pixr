@@ -13,7 +13,7 @@ Pixr is a Flickr-style photo-sharing site built in Rails and Backbone.
 
 ##Technical details
 - Custom authentication using BCrypt
-- Twitter Login with OmniAuth
+- Twitter login with OmniAuth
 - After login, front-end is done entirely with Backbone.js, consuming JSON from the Rails API.
 - Photo storage implemented with [Paperclip][paperclip] and Amazon S3
 - A count of likes is stored using Rails cache_counter to cut down on queries
