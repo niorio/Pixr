@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
       @user = user
       render 'users/new'
     else
-      sign_in!(user)
+      log_in(user)
       redirect_to root_url
     end
   end

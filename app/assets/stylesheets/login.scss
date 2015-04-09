@@ -88,8 +88,9 @@
   color: white;
 }
 
-.twitter-button{
+.twitter-button > button{
   display: block;
+  background-color: transparent;
   background-image: image-url('twitter_button.png');
   width: 158px;
   height: 28px;

@@ -16,11 +16,17 @@
 
       <input class="login-input" type="text" name="user[username]" value="<%= @user.username %>" placeholder="username">
       <input class="login-input" type="text" name="user[email]" value="<%= @user.email %>" placeholder="email">
-      <input class="login-input" type="password" name="user[password]" placeholder="password">
-      <input class="login-input" type="password" name="user[password_confirmation]" placeholder="confirm password">
 
+      <% if @user.provider.nil? %>
+        <input class="login-input" type="password" name="user[password]" placeholder="password">
+        <input class="login-input" type="password" name="user[password_confirmation]" placeholder="confirm password">
+      <% else %>
+        <input type="hidden" name="user[password]" value="<%= @user.password %>">
+        <input type="hidden" name="user[provider]" value="<%= @user.provider %>">
+        <input type="hidden" name="user[uid]" value="<%= @user.uid %>">
+      <% end %>
 
       <button class="login-button">Submit</button>
     </form>
   </section>
-<div>
+</div>
