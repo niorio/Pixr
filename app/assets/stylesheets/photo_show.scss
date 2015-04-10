@@ -120,6 +120,11 @@
   background-color: transparent;
   margin-left: 20px;
   cursor: pointer;
+  opacity: 0;
+}
+
+.photo-title:hover .edit-title, .photo-description:hover .edit-description{
+  opacity: 1;
 }
 
 .photo-title input{
