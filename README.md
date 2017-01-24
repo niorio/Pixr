@@ -26,6 +26,6 @@ Pixr is a Flickr-style photo-sharing site built in Rails and Backbone.
 - photo search across entire site
 - draggable album reordering
 
-[live]: https://www.pixr.pics/
+[live]: http://www.pixr.pics/
 [paperclip]: https://github.com/thoughtbot/paperclip
 [JG]: https://github.com/miromannino/Justified-Gallery
